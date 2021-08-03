@@ -1,5 +1,4 @@
-﻿using DevelopmentTodo.Domain.DataTransferObjects.User;
-using DevelopmentTodo.Domain.Enums;
+﻿using DevelopmentTodo.Domain.Enums;
 
 namespace DevelopmentTodo.Domain.DataTransferObjects.Task
 {
@@ -7,12 +6,12 @@ namespace DevelopmentTodo.Domain.DataTransferObjects.Task
     {
         public int Id { get; set; }
 
+        public int ProviderId { get; set; }
+        public int DeveloperId { get; set; }
+
         public string Name { get; set; }
         public string Description { get; set; }
 
         public TaskStatus Status { get; set; }
-
-        public UserDto Provider { get; set; }
-        public UserDto Developer { get; set; }
     }
 }

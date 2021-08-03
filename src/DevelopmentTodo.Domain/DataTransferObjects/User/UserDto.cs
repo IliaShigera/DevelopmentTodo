@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using DevelopmentTodo.Domain.DataTransferObjects.Task;
-using DevelopmentTodo.Domain.Entities;
 using DevelopmentTodo.Domain.Enums;
 
 namespace DevelopmentTodo.Domain.DataTransferObjects.User

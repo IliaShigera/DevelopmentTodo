@@ -1,7 +1,11 @@
-using System.Reflection;
 using DevelopmentTodo.Api.Extensions;
+using DevelopmentTodo.Api.Filters;
+using DevelopmentTodo.Application.Handlers.User.Commands;
 using DevelopmentTodo.Application.Handlers.User.Queries;
 using DevelopmentTodo.Application.MapperConfiguration;
+using DevelopmentTodo.Application.Repository;
+using DevelopmentTodo.Domain.Interfaces.Repository;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +32,18 @@ namespace DevelopmentTodo.Api
             services.AddMediatR(typeof(GetAllUsersQuery).Assembly);
             services.AddAutoMapper(typeof(UserMapperConfiguration).Assembly);
 
-            services.AddControllers();
+            services.AddFluentValidation(config =>
+                config.RegisterValidatorsFromAssemblyContaining<CreateTaskValidator>());
+
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(EFBaseRepository<>));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+
+            services.AddControllers(config =>
+            {
+                config.Filters.Add<ValidateRequestModelFilter>();
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevelopmentTodo.Api", Version = "v1" });
@@ -43,6 +58,8 @@ namespace DevelopmentTodo.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DevelopmentTodo.Api v1"));
             }
+
+            app.UseCustomExceptionHandler();
 
             app.UseHttpsRedirection();
 

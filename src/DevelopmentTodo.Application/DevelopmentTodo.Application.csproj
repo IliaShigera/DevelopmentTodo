@@ -6,14 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\Task\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\DevelopmentTodo.DAL.EF\DevelopmentTodo.DAL.EF.csproj" />
     <ProjectReference Include="..\DevelopmentTodo.Domain\DevelopmentTodo.Domain.csproj" />
   </ItemGroup>
 

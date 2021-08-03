@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using DevelopmentTodo.Common.Enums;
-using DevelopmentTodo.DAL.EF.Entities.Common;
+using DevelopmentTodo.Domain.Entities.Common;
+using DevelopmentTodo.Domain.Enums;
 
-namespace DevelopmentTodo.DAL.EF.Entities
+namespace DevelopmentTodo.Domain.Entities
 {
     public class UserEntity : BaseEntity
     {

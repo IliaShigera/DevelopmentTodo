@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DevelopmentTodo.DAL.EF.Entities.Common
+namespace DevelopmentTodo.Domain.Entities.Common
 {
     public class BaseEntity
     {

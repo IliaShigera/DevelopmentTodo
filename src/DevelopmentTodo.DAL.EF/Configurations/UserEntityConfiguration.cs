@@ -1,4 +1,4 @@
-﻿using DevelopmentTodo.DAL.EF.Entities;
+﻿using DevelopmentTodo.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using DevelopmentTodo.DAL.EF.Entities;
+using DevelopmentTodo.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevelopmentTodo.DAL.EF

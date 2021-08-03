@@ -1,4 +1,4 @@
-﻿namespace DevelopmentTodo.Common.Enums
+﻿namespace DevelopmentTodo.Domain.Enums
 {
     public enum UserStatus
     {

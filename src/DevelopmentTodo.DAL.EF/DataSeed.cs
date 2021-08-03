@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DevelopmentTodo.Common.Enums;
-using DevelopmentTodo.DAL.EF.Entities;
-using TaskStatus = DevelopmentTodo.Common.Enums.TaskStatus;
+using DevelopmentTodo.Domain.Entities;
+using DevelopmentTodo.Domain.Enums;
+using TaskStatus = DevelopmentTodo.Domain.Enums.TaskStatus;
 
 namespace DevelopmentTodo.DAL.EF
 {

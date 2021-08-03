@@ -1,4 +1,8 @@
+using System.Reflection;
 using DevelopmentTodo.Api.Extensions;
+using DevelopmentTodo.Application.Handlers.User.Queries;
+using DevelopmentTodo.Application.MapperConfiguration;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +24,9 @@ namespace DevelopmentTodo.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureSqlServer(Configuration);
+
+            services.AddMediatR(typeof(GetAllUsersQuery).Assembly);
+            services.AddAutoMapper(typeof(UserMapperConfiguration).Assembly);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
